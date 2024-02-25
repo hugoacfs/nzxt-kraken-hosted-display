@@ -1,0 +1,34 @@
+{
+  "name": "nzxt-temp-display",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx webpack&& npx sass theme.scss styles.css && pkg -t node14-win-x64 app.js -o nzxt-node-app",
+    "sass:watch": "sass --watch theme.scss:styles.css",
+    "start": "node app.js",
+    "dev": "concurrently \"sass --watch theme.scss:styles.css\" \"nodemon app.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "justgage": "^1.6.1",
+    "raphael": "^2.3.0",
+    "systeminformation": "^5.22.0"
+  },
+  "pkg": {
+    "assets": [
+      "getTemp.ps1"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0",
+    "sass": "^1.71.1",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  }
+}
